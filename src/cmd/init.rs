@@ -9,35 +9,37 @@ use std::time::Instant;
 use std::io::Write;
 
 
-const CONFIG: &str = r#"[call.config]
+const CONFIG: &str = r#"[config]
 activate = "dev"
-runner = "make" # just
+runner = "make" # just or make
+mode = "openssh"
 
-[call.mapping]
+[mapping]
 src = "local_path"
 dest = "dest_path"
 mode = "0755"
 exclude = ["./target", "README.md"]
 
-[call.name.dev]
+[server.openssh.dev]
 host = ["192.168.2.17"]
 port = 22
 authentication_type = "Openssh"
 username = "rust"
 
-[call.name.stage]
+[server.password.stage]
 host = ["192.168.2.17"]
 port = 22
 authentication_type = "Password"
 username = "rust"
 password = "123456"
 
-[call.name.prod]
+[server.keypair.prod]
 host = ["192.168.2.17"]
 port = 22
 authentication_type = "KeyPair"
 private_key_file = "~/.ssh/id_rsa"
 pass_phrase = "123456"
+
 "#;
 
 static LOOKING_GLASS: Emoji<'_, '_> = Emoji("🔍  ", "");
@@ -57,8 +59,8 @@ pub fn create_file(path: &Path, content: &str) -> Result<()> {
 }
 
 
-pub fn init(name: &str, force: bool) -> Result<()> {
-    let path = Path::new(name);
+pub fn init() -> Result<()> {
+    let path = Path::new(".");
     let started = Instant::now();
 
     println!(
