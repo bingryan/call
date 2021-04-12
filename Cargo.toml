@@ -12,6 +12,9 @@ clap = "2.33.3"
 anyhow = "1.0.36"
 log = "0.4.11"
 
+# shell
+cmd_lib = "0.12.2"
+
 # console process
 console = "0.14.0"
 indicatif = "0.15.0"

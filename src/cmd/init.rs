@@ -9,24 +9,31 @@ use std::time::Instant;
 use std::io::Write;
 
 
-const CONFIG: &str = r#"[serve.config]
+const CONFIG: &str = r#"[call.config]
 activate = "dev"
+runner = "make" # just
 
-[serve.name.dev]
-host = "192.168.2.17"
+[call.mapping]
+src = "local_path"
+dest = "dest_path"
+mode = "0755"
+exclude = ["./target", "README.md"]
+
+[call.name.dev]
+host = ["192.168.2.17"]
 port = 22
 authentication_type = "Openssh"
 username = "rust"
 
-[serve.name.stage]
-host = "192.168.2.17"
+[call.name.stage]
+host = ["192.168.2.17"]
 port = 22
 authentication_type = "Password"
 username = "rust"
 password = "123456"
 
-[serve.name.prod]
-host = "192.168.2.17"
+[call.name.prod]
+host = ["192.168.2.17"]
 port = 22
 authentication_type = "KeyPair"
 private_key_file = "~/.ssh/id_rsa"
