@@ -32,6 +32,11 @@ It is super easy to get started with your first project.
 ```shell
 cargo install --git  https://github.com/bingryan/call.git
 ```
+or
+
+```shell
+cargo install rust-call
+```
 
 ### Step 2: init call 
 
@@ -68,7 +73,8 @@ call:
 
 ### Step 3: run call
 
-replace `make xxx` with `call xxx` command, when your project has makefile. 
+replace `make xxx` with `call xxx` command, when your project has makefile.
+
 replace `just xxx` with `call xxx` command, when your project has justfile.
 
 

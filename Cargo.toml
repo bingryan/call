@@ -1,9 +1,9 @@
 [package]
-name = "call"
-version = "0.1.0"
+name = "rust-call"
+version = "0.1.1"
 authors = ["bingryan <bingryan@outlook.com>"]
 edition = "2018"
-license = "GNU GPLv3"
+license = "LGPL-3.0"
 description = "Make remote development more elegant"
 readme = "README.md"
 repository = "https://github.com/bingryan/call"
