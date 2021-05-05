@@ -1,6 +1,6 @@
-<div class="half" style="text-align: center;">
-<img src="docs/logo.png" width="50%" syt height="50%" />
-</div>
+<p align="center">
+  <img src="docs/logo.png" width="50%" syt height="50%" />
+</p>
 
 # Call: Make remote development more elegant
 
