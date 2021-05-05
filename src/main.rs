@@ -1,13 +1,20 @@
+#![allow(dead_code)]
 use anyhow::Result;
-use std::process;
-use clap::{crate_authors, crate_description, crate_version, App, AppSettings, Arg, SubCommand};
+use std::{env, process, fs};
+use clap::{crate_authors, crate_description, crate_version, App, Arg};
+use yaml_rust::YamlLoader;
+use crate::config::CallConfig;
 
-
+#[macro_use]
+mod call_macro;
 mod cmd;
 mod config;
 
 
+
 fn run() -> Result<bool> {
+    let config_file = env::current_dir()?.join("Call.yml");
+
     let matches = App::new("call")
         .version(crate_version!())
         .author(crate_authors!())
@@ -19,14 +26,18 @@ fn run() -> Result<bool> {
         )
         .get_matches();
 
+
     if let Some(command) = matches.value_of("command") {
         match command {
             _ if command == "i" => {
-                cmd::init();
-            },
+                cmd::init()?
+            }
             _ => {
-                cmd::runner(command);
-            },
+                let s = fs::read_to_string(config_file.as_path())?;
+                let yml = YamlLoader::load_from_str(s.as_ref())?;
+                let config = CallConfig::build(yml[0].to_owned())?;
+                cmd::runner(command, &config)?
+            }
         }
     }
     Ok(true)

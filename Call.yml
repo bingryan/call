@@ -1,0 +1,41 @@
+call:
+  config:
+    active:
+      openssh:
+        - dev
+      password:
+        - stage
+      keypair:
+        - prod
+    runner: make
+  mapping:
+      src: .
+      dest: ~/workspace/call
+      exclude:
+          - ./target
+          - README.md
+  server:
+        openssh:
+          dev:
+              host:
+                - 127.0.0.1
+              port: 22
+              authentication_type: openssh
+              username: rust
+        password:
+          stage:
+              host:
+                - 127.0.0.1
+              port: 22
+              authentication_type: password
+              username: rust
+              password: "123456"
+        keypair:
+          prod:
+              host:
+                - 127.0.0.1
+              port: 22
+              authentication_type: keypair
+              username: rust
+              private_key_file: rust
+              pass_phrase: rust

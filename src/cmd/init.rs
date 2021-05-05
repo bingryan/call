@@ -1,52 +1,13 @@
 use std::fs::{create_dir_all, File};
 use std::path::Path;
-use std::path::PathBuf;
-use console::{style, Emoji};
-use indicatif::{HumanDuration, MultiProgress, ProgressBar, ProgressStyle};
+use console::style;
+use indicatif::HumanDuration;
 
 use anyhow::Result;
 use std::time::Instant;
 use std::io::Write;
 
-
-const CONFIG: &str = r#"[config]
-activate = "dev"
-runner = "make" # just or make
-mode = "openssh"
-
-[mapping]
-src = "local_path"
-dest = "dest_path"
-mode = "0755"
-exclude = ["./target", "README.md"]
-
-[server.openssh.dev]
-host = ["192.168.2.17"]
-port = 22
-authentication_type = "Openssh"
-username = "rust"
-
-[server.password.stage]
-host = ["192.168.2.17"]
-port = 22
-authentication_type = "Password"
-username = "rust"
-password = "123456"
-
-[server.keypair.prod]
-host = ["192.168.2.17"]
-port = 22
-authentication_type = "KeyPair"
-private_key_file = "~/.ssh/id_rsa"
-pass_phrase = "123456"
-
-"#;
-
-static LOOKING_GLASS: Emoji<'_, '_> = Emoji("🔍  ", "");
-static TRUCK: Emoji<'_, '_> = Emoji("🚚  ", "");
-static CLIP: Emoji<'_, '_> = Emoji("🔗  ", "");
-static PAPER: Emoji<'_, '_> = Emoji("📃  ", "");
-static SPARKLE: Emoji<'_, '_> = Emoji("✨ ", ":-)");
+use crate::config::{LOOKING_GLASS, SPARKLE, INIT_CONFIG};
 
 
 pub fn create_file(path: &Path, content: &str) -> Result<()> {
@@ -64,16 +25,16 @@ pub fn init() -> Result<()> {
     let started = Instant::now();
 
     println!(
-        "{} {}Create configure file...",
+        "{} {} Create Call.yml file...",
         style(format!("[1/{}]", 1)).bold().dim(),
         LOOKING_GLASS
     );
 
-    let config = CONFIG
+    let config = INIT_CONFIG
         .trim_start();
 
     // generate project data catalog
-    create_file(&path.join("Call.toml"), &config)?;
+    create_file(&path.join("Call.yml"), &config)?;
 
     println!("{} Done in {}", SPARKLE, HumanDuration(started.elapsed()));
     Ok(())
