@@ -3,7 +3,16 @@ name = "call"
 version = "0.1.0"
 authors = ["bingryan <bingryan@outlook.com>"]
 edition = "2018"
-
+license = "GNU GPLv3"
+description = "Make remote development more elegant"
+readme = "README.md"
+repository = "https://github.com/bingryan/call"
+homepage = "https://github.com/bingryan/call"
+keywords = ["cli", "call", "remote", "build"]
+categories = ["command-line-utilities"]
+exclude = [
+    "docs/*",
+]
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
@@ -23,3 +32,4 @@ cmd_lib = "1.0.10"
 # console process
 console = "0.14.0"
 indicatif = "0.15.0"
+
