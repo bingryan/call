@@ -30,8 +30,7 @@ pub fn init() -> Result<()> {
         LOOKING_GLASS
     );
 
-    let config = INIT_CONFIG
-        .trim_start();
+    let config = INIT_CONFIG.trim_start();
 
     // generate project data catalog
     create_file(&path.join("Call.yml"), &config)?;

@@ -78,3 +78,31 @@ replace `make xxx` with `call xxx` command, when your project has makefile.
 replace `just xxx` with `call xxx` command, when your project has justfile.
 
 
+## Requirements
+
+- **openssh** (rsync)
+- **password** (rsync,sshpass)
+- **keypair** (rsync)
+
+```shell
+# Debian/Ubuntu
+$ sudo apt-get install rsync
+$ sudo apt-get install sshpass
+
+# Red Hat
+$ sudo yum install rsync
+$ sudo yum install sshpass
+
+# Arch Linux
+$ sudo pacman -S rsync
+$ sudo pacman -S sshpass
+
+# MacOS
+$ brew install rsync
+$ brew install http://git.io/sshpass.rb(if notwork, copy raw content to `sshpass.rb`: brew install sshpass.rb)
+```
+
+
+## Contributing
+
+Contributors are welcomed to join this project. Please check [CONTRIBUTING](./CONTRIBUTING.md) about how to contribute to this project.

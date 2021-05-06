@@ -1,8 +1,8 @@
+use anyhow::Result;
 use console::Emoji;
-use anyhow::{Result};
-use yaml_rust::{Yaml};
 use std::collections::HashMap;
-use std::{fmt};
+use std::fmt;
+use yaml_rust::Yaml;
 
 pub static ROOT: &str = "call";
 pub static CONFIG: &str = "config";
@@ -105,9 +105,27 @@ pub struct Keypair {
 
 #[derive(Clone, Debug)]
 pub enum ServerValue {
-    Openssh { host: Vec<String>, port: i64, authentication_type: String, username: String },
-    Password { host: Vec<String>, port: i64, authentication_type: String, username: String, password: String },
-    Keypair { host: Vec<String>, port: i64, authentication_type: String, username: String, private_key_file: String, pass_phrase: String },
+    Openssh {
+        host: Vec<String>,
+        port: i64,
+        authentication_type: String,
+        username: String,
+    },
+    Password {
+        host: Vec<String>,
+        port: i64,
+        authentication_type: String,
+        username: String,
+        password: String,
+    },
+    Keypair {
+        host: Vec<String>,
+        port: i64,
+        authentication_type: String,
+        username: String,
+        private_key_file: String,
+        pass_phrase: String,
+    },
 }
 
 #[derive(PartialEq, Eq, Hash, Clone, Debug)]
@@ -130,7 +148,7 @@ impl fmt::Display for ServerKey {
 
 impl ServerKey {
     fn as_str(&self) -> &'static str {
-        match *self { // *self has type Direction
+        match *self {
             ServerKey::Openssh => "openssh",
             ServerKey::Password => "password",
             ServerKey::Keypair => "keypair",
@@ -172,7 +190,9 @@ impl CallConfig {
                     let openssh_server = ServerValue::Openssh {
                         host: call_vec!(server_yaml[OPENSSH][server_name][HOST]),
                         port: call_i64!(server_yaml[OPENSSH][server_name][PORT]),
-                        authentication_type: call_string!(server_yaml[OPENSSH][server_name][AUTHENTICATION_TYPE]),
+                        authentication_type: call_string!(
+                            server_yaml[OPENSSH][server_name][AUTHENTICATION_TYPE]
+                        ),
                         username: call_string!(server_yaml[OPENSSH][server_name][USERNAME]),
                     };
 
@@ -190,7 +210,9 @@ impl CallConfig {
                     let password_server = ServerValue::Password {
                         host: call_vec!(server_yaml[PASSWORD][server_name][HOST]),
                         port: call_i64!(server_yaml[PASSWORD][server_name][PORT]),
-                        authentication_type: call_string!(server_yaml[PASSWORD][server_name][AUTHENTICATION_TYPE]),
+                        authentication_type: call_string!(
+                            server_yaml[PASSWORD][server_name][AUTHENTICATION_TYPE]
+                        ),
                         username: call_string!(server_yaml[PASSWORD][server_name][USERNAME]),
                         password: call_string!(server_yaml[PASSWORD][server_name][PASSWORD]),
                     };
@@ -209,9 +231,13 @@ impl CallConfig {
                     let password_server = ServerValue::Keypair {
                         host: call_vec!(server_yaml[KEYPAIR][server_name][HOST]),
                         port: call_i64!(server_yaml[KEYPAIR][server_name][PORT]),
-                        authentication_type: call_string!(server_yaml[KEYPAIR][server_name][AUTHENTICATION_TYPE]),
+                        authentication_type: call_string!(
+                            server_yaml[KEYPAIR][server_name][AUTHENTICATION_TYPE]
+                        ),
                         username: call_string!(server_yaml[KEYPAIR][server_name][USERNAME]),
-                        private_key_file: call_string!(server_yaml[KEYPAIR][server_name][PRIVATE_KEY_FILE]),
+                        private_key_file: call_string!(
+                            server_yaml[KEYPAIR][server_name][PRIVATE_KEY_FILE]
+                        ),
                         pass_phrase: call_string!(server_yaml[KEYPAIR][server_name][PASS_PHRASE]),
                     };
 

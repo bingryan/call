@@ -1,8 +1,9 @@
 #![allow(dead_code)]
 use anyhow::Result;
-use std::{env, process, fs};
 use clap::{crate_authors, crate_description, crate_version, App, Arg};
+use std::{env, fs, process};
 use yaml_rust::YamlLoader;
+
 use crate::config::CallConfig;
 
 #[macro_use]
@@ -29,9 +30,7 @@ fn run() -> Result<bool> {
 
     if let Some(command) = matches.value_of("command") {
         match command {
-            _ if command == "i" => {
-                cmd::init()?
-            }
+            _ if command == "i" => cmd::init()?,
             _ => {
                 let s = fs::read_to_string(config_file.as_path())?;
                 let yml = YamlLoader::load_from_str(s.as_ref())?;

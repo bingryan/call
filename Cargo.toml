@@ -1,6 +1,6 @@
 [package]
 name = "rust-call"
-version = "0.1.2"
+version = "0.1.3"
 authors = ["bingryan <bingryan@outlook.com>"]
 edition = "2018"
 license = "LGPL-3.0"
@@ -25,12 +25,7 @@ anyhow = "1.0.36"
 log = "0.4.11"
 yaml-rust = "0.4"
 dirs = "2.0"
-
-# https://crates.io/crates/ignore
 ignore = "0.4.17"
-exitcode = "1.1.2"
-
-# shell
 cmd_lib = "1.0.10"
 # console process
 console = "0.14.0"
