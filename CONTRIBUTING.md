@@ -5,5 +5,5 @@
 - Add files to the staging area : `git add .`
 - Commit your changes: `git commit -am 'Add some feature'`
 - Push to the branch: `git push origin my-new-feature`
-- Submit a pull request to master branch
+- Submit a pull request to main branch
 
