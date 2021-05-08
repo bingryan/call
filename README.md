@@ -106,6 +106,11 @@ $ brew install rsync
 $ brew install http://git.io/sshpass.rb(if notwork, copy raw content to `sshpass.rb`: brew install sshpass.rb)
 ```
 
+## Architecture
+
+<p align="center">
+  <img src="docs/architecture.png" width="50%" syt height="50%" />
+</p>
 
 ## Contributing
 
