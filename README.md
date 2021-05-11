@@ -12,20 +12,19 @@
 
 ## What does it do
 
-`Call` is an easy-to-use command tools for remote development. It helps you to build remote development easily and elegant.
-It can work with [makefile](https://github.com/mirror/make) and [justfile](https://github.com/casey/just).
+`Call` is an easy-to-use command tools for remote development. It helps you to build remote development easily and
+elegant. It can work with [makefile](https://github.com/mirror/make) and [justfile](https://github.com/casey/just).
 
 `Call` provides three ways.
 
 * **openssh**
   SSH Login Without Password
-  
+
 * **password**
   SSH Login With Password
-  
+
 * **keypair**
   SSH Login With Private Key File
-
 
 ## Quick Start
 
@@ -36,13 +35,14 @@ It is super easy to get started with your first project.
 ```shell
 cargo install --git  https://github.com/bingryan/call.git
 ```
+
 or
 
 ```shell
 cargo install rust-call
 ```
 
-### Step 2: init call 
+### Step 2: init call
 
 ```shell
 cd your_project_homepage
@@ -50,6 +50,7 @@ call i
 ```
 
 there will be a `call.yml` file at `your_project_homepage`. Then you can configure `call.yml`。such as:
+
 ```yaml
 call:
   config:
@@ -58,19 +59,19 @@ call:
         - dev  # active server label
     runner: make  # make -> makefile , just -> justfile
   mapping:
-      src: . # current dir
-      dest: ~/workspace/call  # remote path
-      exclude: # Ignored directories in .gitignore will also be ignored
-          - ./target
-          - README.md
+    src: . # current dir
+    dest: ~/workspace/call  # remote path
+    exclude: # Ignored directories in .gitignore will also be ignored
+      - ./target
+      - README.md
   server:
-        openssh:
-          dev: # label for openssh server
-              host:
-                - 192.168.2.49 # multiple
-              port: 22
-              authentication_type: openssh
-              username: rust # remote server username
+    openssh:
+      dev: # label for openssh server
+        host:
+          - 192.168.2.49 # multiple
+        port: 22
+        authentication_type: openssh
+        username: rust # remote server username
 
 
 ```
@@ -80,7 +81,6 @@ call:
 replace `make xxx` with `call xxx` command, when your project has makefile.
 
 replace `just xxx` with `call xxx` command, when your project has justfile.
-
 
 ## Requirements
 
@@ -112,6 +112,11 @@ $ brew install http://git.io/sshpass.rb(if notwork, copy raw content to `sshpass
   <img src="docs/architecture.png" width="50%" syt height="50%" />
 </p>
 
+## TODO
+
+* [ ]  Call Server(Relay Server):  relay server which is able to coordinate with clients to establish connectivity.
+
 ## Contributing
 
-Contributors are welcomed to join this project. Please check [CONTRIBUTING](./CONTRIBUTING.md) about how to contribute to this project.
+Contributors are welcomed to join this project. Please check [CONTRIBUTING](./CONTRIBUTING.md) about how to contribute
+to this project.
