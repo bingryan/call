@@ -26,6 +26,23 @@ elegant. It can work with [makefile](https://github.com/mirror/make) and [justfi
 * **keypair**
   SSH Login With Private Key File
 
+## How it works(now)
+
+Functions currently implemented:
+
+* step1: synchronize data to the specified server
+
+* step2: execute commands on the remote server
+
+### Architecture
+
+<p align="center">
+  <img src="docs/architecture.png" width="50%" syt height="50%" />
+</p>
+
+
+`primary plan`: connect different LANs to the relay server，allow machines to control machines with non-public network IP
+
 ## Quick Start
 
 It is super easy to get started with your first project.
@@ -106,11 +123,7 @@ $ brew install rsync
 $ brew install http://git.io/sshpass.rb(if notwork, copy raw content to `sshpass.rb`: brew install sshpass.rb)
 ```
 
-## Architecture
 
-<p align="center">
-  <img src="docs/architecture.png" width="50%" syt height="50%" />
-</p>
 
 ## TODO
 
