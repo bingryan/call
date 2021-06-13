@@ -1,3 +1,16 @@
+## 0.2.0 (June 6, 2021)
+
+#### FEATURES:
+
+* add template support
+
+#### IMPROVEMENTS:
+
+#### BUG FIXES:
+
+
+
+#### BREAKING CHANGES:
 
 ## 0.1.2 (May 6, 2021)
 

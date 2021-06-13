@@ -1,4 +1,5 @@
 #![allow(dead_code)]
+
 use anyhow::Result;
 use clap::{crate_authors, crate_description, crate_version, App, Arg};
 use std::{env, fs, process};
@@ -10,7 +11,6 @@ use crate::config::CallConfig;
 mod call_macro;
 mod cmd;
 mod config;
-
 
 
 fn run() -> Result<bool> {
