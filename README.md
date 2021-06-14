@@ -41,7 +41,6 @@ Functions currently implemented:
 </p>
 
 
-`primary plan`: connect different LANs to the relay server，allow machines to control machines with non-public network IP
 
 ## Quick Start
 
@@ -127,7 +126,7 @@ $ brew install http://git.io/sshpass.rb(if notwork, copy raw content to `sshpass
 
 ## TODO
 
-* [ ]  Call Server(Relay Server):  relay server which is able to coordinate with clients to establish connectivity.
+* [ ]  ~~Call Server(Relay Server):  relay server which is able to coordinate with clients to establish connectivity(use other port forward tools).~~
 * [x]  default template(Put the template.yml under ~/.call/template.yml and copy it directly when run: call i)
 
 ## Contributing
