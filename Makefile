@@ -5,3 +5,7 @@ install:
 .PHONY: time
 time:
 	cargo +nightly build -Z timings
+
+.PHONY: commit
+commit:
+	pre-commit run --all-files
