@@ -129,7 +129,11 @@ $ brew install http://git.io/sshpass.rb(if notwork, copy raw content to `sshpass
 * [ ]  ~~Call Server(Relay Server):  relay server which is able to coordinate with clients to establish connectivity(use other port forward tools).~~
 * [x]  default template(Put the template.yml under ~/.call/template.yml and copy it directly when run: call i)
 
+## Tutorial
+
+[Tutorial Doc](./docs/tutorial.md)
+
 ## Contributing
 
-Contributors are welcomed to join this project. Please check [CONTRIBUTING](./CONTRIBUTING.md) about how to contribute
+Contributors are welcomed to join this project. Please check [CONTRIBUTING](./.github/CONTRIBUTING.md) about how to contribute
 to this project.

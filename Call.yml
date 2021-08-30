@@ -1,0 +1,20 @@
+call:
+  config:
+    active:
+      openssh:
+        - dev
+    runner: make
+  mapping:
+      src: .
+      dest: ~/workspace/call-2.0
+      exclude:
+          - ./target
+          - README.md
+  server:
+        openssh:
+          dev:
+              host:
+                - 192.168.2.26
+              port: 22
+              authentication_type: openssh
+              username: rust
