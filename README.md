@@ -1,3 +1,21 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**
+
+- [Call: Make remote development more elegant](#call-make-remote-development-more-elegant)
+  - [What does it do](#what-does-it-do)
+  - [How it works(now)](#how-it-worksnow)
+    - [Architecture](#architecture)
+  - [Quick Start](#quick-start)
+    - [Step 1: install call command tools](#step-1-install-call-command-tools)
+    - [Step 2: init call](#step-2-init-call)
+    - [Step 3: run call](#step-3-run-call)
+  - [Requirements](#requirements)
+  - [TODO](#todo)
+  - [Contributing](#contributing)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 <p align="center">
   <img src="docs/logo.png" width="50%" syt height="50%" />
 </p>
