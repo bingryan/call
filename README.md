@@ -24,9 +24,11 @@
 # Call: Make remote development more elegant
 
 <div align="center">
+
 [![License](https://img.shields.io/badge/license-Apache%202-4EB1BA.svg)](https://www.apache.org/licenses/LICENSE-2.0.html)
 
 [![Build Status](https://travis-ci.com/bingryan/call.svg?branch=main)](https://travis-ci.com/bingryan/call)
+
 </div>
 
 
