@@ -13,8 +13,12 @@ use crate::{config_file, create_file, root_path};
 
 pub fn init() -> Result<()> {
 	let call_config_root = root_path()?.join("config.toml");
-
 	let (template_file, call_file) = config_file(&call_config_root)?;
+	let call_file_parent = call_file.parent().unwrap();
+
+	if !call_file_parent.exists() {
+		create_dir_all(call_file_parent)?;
+	}
 
 	let started = Instant::now();
 

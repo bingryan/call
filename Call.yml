@@ -6,7 +6,7 @@ call:
     runner: make
   mapping:
       src: .
-      dest: ~/workspace/call-2.0
+      dest: ~/workspace/call
       exclude:
           - ./target
           - README.md
@@ -14,7 +14,7 @@ call:
         openssh:
           dev:
               host:
-                - 192.168.2.26
+                - 127.0.0.1
               port: 22
               authentication_type: openssh
               username: rust
