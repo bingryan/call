@@ -156,7 +156,7 @@ $ brew install http://git.io/sshpass.rb(if notwork, copy raw content to `sshpass
 
 ## Tutorial
 
-[Tutorial Doc](./docs/tutorial.md)
+[Tutorial Doc](https://github.com/bingryan/call/blob/main/docs/tutorial.md)
 
 ## Contributing
 
