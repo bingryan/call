@@ -167,6 +167,7 @@ fn openssh_run(host: &str, port: &i64, username: &str, dest_path: &str, runner: 
 		});
 
 	if !output.status.success() {
+		eprintln!("Call Error: {:?}", output.stderr);
 		exit(output.status.code().unwrap_or(1))
 	}
 }
@@ -195,6 +196,7 @@ fn password_run(host: &str, port: &i64, username: &str, password: &str, dest_pat
 			exit(-5);
 		});
 	if !output.status.success() {
+		eprintln!("Call Error: {:?}", output.stderr);
 		exit(output.status.code().unwrap_or(1))
 	}
 }
@@ -231,6 +233,7 @@ fn password_rsync(host: &str, port: &i64, username: &str, password: &str, dest_p
 			exit(-5);
 		});
 	if !output.status.success() {
+		eprintln!("Call Error: {:?}", output.stderr);
 		exit(output.status.code().unwrap_or(1))
 	}
 }
@@ -268,6 +271,7 @@ fn keypair_run(
 		});
 
 	if !output.status.success() {
+		eprintln!("Call Error: {:?}", output.stderr);
 		exit(output.status.code().unwrap_or(1))
 	}
 }
