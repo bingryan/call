@@ -5,16 +5,16 @@ call:
         - dev
     runner: make
   mapping:
-      src: .
-      dest: ~/workspace/call
-      exclude:
-          - ./target
-          - README.md
+    src: .
+    dest: ~/workspace/call
+    exclude:
+      - ./target
+      - README.md
   server:
-        openssh:
-          dev:
-              host:
-                - 127.0.0.1
-              port: 22
-              authentication_type: openssh
-              username: rust
+    openssh:
+      dev:
+        host:
+          - 127.0.0.1
+        port: 22
+        authentication_type: openssh
+        username: rust
